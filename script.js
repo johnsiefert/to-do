@@ -1,6 +1,7 @@
 let button = document.getElementById("enter");
 let input = document.getElementById("userinput");
 let ul = document.querySelector("ul");
+let li = document.querySelectorAll("li")
 
 function inputLength() {
 	return input.value.length;
@@ -24,6 +25,14 @@ function addListAfterKeydown(event) {
 		createListElement();
 	}
 }
+
+for (let i = 0; i < li.length; i++) {
+	li[i].addEventListener("click", toggle);
+  }
+
+  function toggle() {
+	this.classList.toggle("done");
+  }
 
 button.addEventListener("click", addListAfterClick);
 
